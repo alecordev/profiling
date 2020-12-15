@@ -2,6 +2,22 @@
 
 Profiling in Python.
 
+Identify bottlenecks and measure execution times.
+
+## Intro
+
+The most common approach is to measure the time before and after an activity.
+
+```python
+import time
+t0 = time.perf_counter()
+activity_or_process()
+time_taken = time.perf_counter() - t0
+print(f'Total time taken was {time_taken}')
+```
+
+This can easily be put into a Python decorator for reuse and simplification.
+
 ## Using timeit
 
 `python -m timeit '"-".join(map(str, range(100)))'`
@@ -14,6 +30,15 @@ timeit.timeit('import time; time.sleep(2)', number=10000)
 ```
 
 - https://docs.python.org/3.6/library/timeit.html
+
+### Jupyter Notebooks
+
+In a Jupyter Notebook, you can use the following to time the execution of a cell:
+
+```python
+%%timeit
+np.random.randn(100000).cumsum()
+```
 
 ## Using profile / cProfile
 
@@ -53,9 +78,7 @@ Graphviz requires the graphviz binaries, usually in the PATH or available from t
 If you want to use QCacheGrindWin:
 
 1) https://sourceforge.net/projects/qcachegrindwin/
-
 2) Generate cProfile output
-
 3) Use `pyprof2calltree` to convert the cProfile output to QCacheGrindWin file format
 
 ### Install The Convertor
@@ -81,7 +104,7 @@ And open the `import.callgrind` with the QCacheGrindWin application.
 - https://github.com/nvdv/vprof
 - https://github.com/rkern/line_profiler
 
-## Bibliography
+## Bibliography and Resources
 
 - http://jiffyclub.github.io/snakeviz/
 - https://github.com/jrfonseca/gprof2dot
