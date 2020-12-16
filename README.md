@@ -51,9 +51,11 @@ np.random.randn(100000).cumsum()
 
 ## Other modules for Profiling
 
+- line_profiler
 - pyprof2calltree
 - pyinstrument
 - snakeviz
+- vprof
 
 ## Installing dependencies
 
@@ -110,3 +112,7 @@ And open the `import.callgrind` with the QCacheGrindWin application.
 - https://github.com/jrfonseca/gprof2dot
 - http://www.graphviz.org/doc/info/command.html
 - https://julien.danjou.info/blog/2015/guide-to-python-profiling-cprofile-concrete-case-carbonara
+
+### Graphviz Binaries
+
+- https://www2.graphviz.org/Packages/stable/windows/10/msbuild/Release/Win32/
